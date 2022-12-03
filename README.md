@@ -1,14 +1,49 @@
-# pytorch-gpu-data-science-project
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/KAUST-Academy/introduction-to-machine-learning/HEAD)
 
-Repository containing scaffolding for a Python 3-based data science project with GPU acceleration using the [PyTorch](https://pytorch.org/) ecosystem. 
+# Introduction to Recurrent Neural Networks
 
-## Creating a new project from this template
+There is strong demand for deep learning (DL) skills and expertise to solve challenging business problems both globally and locally in KSA. This course will help learners build capacity in core DL tools and methods and enable them to develop their own applications that use recurrent neural networks. This course covers the basic theory behind RNN algorithms but the majority of the focus is on hands-on examples using [PyTorch](https://pytorch.org/).
 
-Simply follow the [instructions](https://help.github.com/en/articles/creating-a-repository-from-a-template) to create a new project repository from this template.
+## Learning Objectives
 
-## Project organization
+The primary learning objective of this course is to provide students with practical, hands-on experience with state-of-the-art machine learning and deep learning tools that are widely used in industry.
 
-Project organization is based on ideas from [_Good Enough Practices for Scientific Computing_](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510).
+This course covers portions of [Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/) and [Machine Learning with PyTorch and Scikit-Learn](https://www.packtpub.com/product/machine-learning-with-pytorch-and-scikit-learn/9781801819312). The following topics will be discussed.
+
+* Processing Sequences using Recurrent Neural Networks (RNNs)
+* Natural Language Processing using Attention and Transformers 
+
+## Lessons
+
+The lessons are organizes into modules with the idea that they can taught somewhat independently to accommodate specific audiences.
+
+### Module 0: Recap of Deep Learning Fundamentals
+
+### Module 1: [Introduction to Deep Learning, Part III](https://kaust-my.sharepoint.com/:p:/g/personal/pughdr_kaust_edu_sa/EQ-T0E5AcXJLsgYw0VPhomYBN4l1YLAc3hK0UXQUNZ4N9g?e=R5ZTCJ)
+
+* Consolidation of previous days content via Q/A and live coding demonstrations.  
+* The morning session will focus on the theory behind Recurrent Neural Networks (RNNs) by covering portions of [Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/) and [Machine Learning with PyTorch and Scikit-Learn](https://www.packtpub.com/product/machine-learning-with-pytorch-and-scikit-learn/9781801819312).  
+* The afternoon session will focus on applying the techniques learned in the morning session using [PyTorch](https://pytorch.org/), followed by a short assessment on the Kaggle data science competition platform.
+
+| **Tutorial** | **Open in Google Colab** | **Open in Kaggle** |
+|--------------|:------------------------:|:------------------:|
+| Univariate Time Series Forecasting with RNNs | [![Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/KAUST-Academy/introduction-to-recurrent-neural-networks/blob/master/notebooks/03a-forecasting-univariate-time-series-with-rnns.ipynb) | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/KAUST-Academy/introduction-to-recurrent-neural-networks/blob/master/notebooks/03a-forecasting-univariate-time-series-with-rnns.ipynb) | 
+| Multivariate Time Series Forecasting with RNNs | [![Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/KAUST-Academy/introduction-to-recurrent-neural-networks/blob/master/notebooks/03b-forecasting-multivariate-time-series-with-rnns.ipynb) | [![Kaggle](https://kaggle.com/static/images/open-in-kaggle.svg)](https://kaggle.com/kernels/welcome?src=https://github.com/KAUST-Academy/introduction-to-recurrent-neural-networks/blob/master/notebooks/03b-forecasting-multivariate-time-series-with-rnns.ipynb) | 
+
+### Module 2: [Transformers and Attention](https://kaust-my.sharepoint.com/:p:/g/personal/pughdr_kaust_edu_sa/EZUsh7VkuIlIhfp0KmKA61EBnb6cLPlEoVsicJmkZNRr9w?e=J34Jrt)
+
+* Consolidation of previous days content via Q/A and live coding demonstrations.  
+* The morning session will focus on the theory behind Transformers and Attention, by covering portions of by covering portions of [Hands-on Machine Learning with Scikit-Learn, Keras, and TensorFlow](https://www.oreilly.com/library/view/hands-on-machine-learning/9781492032632/) and [Machine Learning with PyTorch and Scikit-Learn]
+* The afternoon session will focus on applying the techniques learned in the morning session using [PyTorch](https://pytorch.org/), followed by a short assessment on the Kaggle data science competition platform.
+
+
+## Assessment
+
+Student performance on the course will be assessed through participation in a Kaggle classroom competition. 
+
+# Repository Organization
+
+Repository organization is based on ideas from [_Good Enough Practices for Scientific Computing_](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005510).
 
 1. Put each project in its own directory, which is named after the project.
 2. Put external scripts or compiled programs in the `bin` directory.
@@ -80,41 +115,6 @@ following command.
 
 ```bash
 $ mamba env create --prefix $ENV_PREFIX --file environment.yml --force
-```
-
-## Installing the NVIDIA CUDA Compiler (NVCC) (Optional)
-
-Installing the NVIDIA CUDA Toolkit manually is only required if your project needs to use the `nvcc` compiler. 
-Note that even if you have not written any custom CUDA code that needs to be compiled with `nvcc`, if your project 
-uses packages that include custom CUDA extensions for PyTorch then you will need `nvcc` installed in order to build these packages.
-
-If you don't need `nvcc`, then you can skip this section as `conda` will install a `cudatoolkit` package 
-which includes all the necessary runtime CUDA dependencies (but not the `nvcc` compiler).
-
-### Workstation
-
-You will need to have the [appropriate version](https://developer.nvidia.com/cuda-toolkit-archive) 
-of the NVIDIA CUDA Toolkit installed on your workstation. If using the most recent versionf of PyTorch, then you 
-should install [NVIDIA CUDA Toolkit 11.1](https://developer.nvidia.com/cuda-11.1.1-download-archive) 
-[(documentation)](https://docs.nvidia.com/cuda/archive/11.1.1/).
-
-After installing the appropriate version of the NVIDIA CUDA Toolkit you will need to set the 
-following environment variables.
-
-```bash
-$ export CUDA_HOME=/usr/local/cuda-11.1
-$ export PATH=$CUDA_HOME/bin:$PATH
-$ export LD_LIBRARY_PATH=$CUDA_HOME/lib64:$LD_LIBRARY_PATH
-```
-
-### Ibex
-
-Ibex users do not neet to install NVIDIA CUDA Toolkit as the relevant versions have already been 
-made available on Ibex by the Ibex Systems team. Users simply need to load the appropriate version 
-using the `module` tool. 
-
-```bash
-$ module load cuda/11.1.1
 ```
 
 ## Using Docker
